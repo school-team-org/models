@@ -4,6 +4,8 @@ import "go.mongodb.org/mongo-driver/bson/primitive"
 
 var (
 	USER_MODEL_NAME = "users"
+	POSITION_LIST   = []string{"head", "teacher", "intern"}
+	ROLE_LIST       = []string{"student", "admin", "teacher", "parents"}
 )
 
 type UserModel struct {
