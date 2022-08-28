@@ -1,4 +1,4 @@
-module schoolmodel
+module github.com/school-team-org/models
 
 go 1.18
 
