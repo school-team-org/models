@@ -7,7 +7,7 @@ import (
 )
 
 var (
-	USER_MODEL_NAME = "admins"
+	USER_MODEL_NAME = "users"
 	POSITION_LIST   = []string{"head", "teacher", "intern"}
 	ROLE_LIST       = []string{"student", "admin", "teacher", "parents"}
 )
