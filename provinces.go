@@ -11,10 +11,10 @@ var (
 )
 
 type ProvinceModel struct {
-	DefaultField
-	NameLA string `json:"name_la" bson:"name_la" validate:"required"`
-	NameEn string `json:"name_en" bson:"name_en" validate:"required"`
-	Code   string `json:"code" bson:"code" validate:"required"`
+	DefaultField `bson:",inline"`
+	NameLA       string `json:"name_la" bson:"name_la" validate:"required"`
+	NameEn       string `json:"name_en" bson:"name_en" validate:"required"`
+	Code         string `json:"code" bson:"code" validate:"required"`
 }
 
 func BindProvinceModel(m *ProvinceModel) *ProvinceModel {

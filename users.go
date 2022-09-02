@@ -13,7 +13,7 @@ var (
 )
 
 type UserModel struct {
-	DefaultField
+	DefaultField   `bson:",inline"`
 	Firstname      string             `json:"first_name" bson:"first_name" validate:"required"`
 	Lastname       string             `json:"last_name" bson:"last_name" validate:"required"`
 	PhoneNumber    string             `json:"phone_number" bson:"phone_number" validate:"required"`
