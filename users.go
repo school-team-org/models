@@ -40,10 +40,12 @@ func BindUserModel(m *UserModel) *UserModel {
 	m.ID = primitive.NewObjectID()
 	m.CreatedAt = primitive.NewDateTimeFromTime(time.Now())
 	m.UpdatedAt = primitive.NewDateTimeFromTime(time.Now())
+	m.IsActive = true
 	return m
 }
 
 func BindUpdateUserModel(m *UserModel) *UserModel {
 	m.UpdatedAt = primitive.NewDateTimeFromTime(time.Now())
+	m.IsActive = true
 	return m
 }

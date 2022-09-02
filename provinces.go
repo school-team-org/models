@@ -21,10 +21,12 @@ func BindProvinceModel(m *ProvinceModel) *ProvinceModel {
 	m.ID = primitive.NewObjectID()
 	m.CreatedAt = primitive.NewDateTimeFromTime(time.Now())
 	m.UpdatedAt = primitive.NewDateTimeFromTime(time.Now())
+	m.IsActive = true
 	return m
 }
 
 func BindUpdateProvinceModel(m *ProvinceModel) *ProvinceModel {
 	m.UpdatedAt = primitive.NewDateTimeFromTime(time.Now())
+	m.IsActive = true
 	return m
 }

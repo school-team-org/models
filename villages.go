@@ -20,10 +20,12 @@ func BindVillageModel(m *VillageModel) *VillageModel {
 	m.ID = primitive.NewObjectID()
 	m.CreatedAt = primitive.NewDateTimeFromTime(time.Now())
 	m.UpdatedAt = primitive.NewDateTimeFromTime(time.Now())
+	m.IsActive = true
 	return m
 }
 
 func BindUpdateVillageModel(m *VillageModel) *VillageModel {
 	m.UpdatedAt = primitive.NewDateTimeFromTime(time.Now())
+	m.IsActive = true
 	return m
 }

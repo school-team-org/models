@@ -20,10 +20,12 @@ func BindDistrictModel(m *DistrictModel) *DistrictModel {
 	m.ID = primitive.NewObjectID()
 	m.CreatedAt = primitive.NewDateTimeFromTime(time.Now())
 	m.UpdatedAt = primitive.NewDateTimeFromTime(time.Now())
+	m.IsActive = true
 	return m
 }
 
 func BindUpdateDistrictModel(m *DistrictModel) *DistrictModel {
 	m.UpdatedAt = primitive.NewDateTimeFromTime(time.Now())
+	m.IsActive = true
 	return m
 }
