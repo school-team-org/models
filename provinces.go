@@ -17,9 +17,14 @@ type ProvinceModel struct {
 	Code   string `json:"code" bson:"code" validate:"required"`
 }
 
-func GetProvinceModel(m *ProvinceModel) *ProvinceModel {
+func BindProvinceModel(m *ProvinceModel) *ProvinceModel {
 	m.ID = primitive.NewObjectID()
 	m.CreatedAt = primitive.NewDateTimeFromTime(time.Now())
+	m.UpdatedAt = primitive.NewDateTimeFromTime(time.Now())
+	return m
+}
+
+func BindUpdateProvinceModel(m *ProvinceModel) *ProvinceModel {
 	m.UpdatedAt = primitive.NewDateTimeFromTime(time.Now())
 	return m
 }
