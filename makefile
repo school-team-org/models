@@ -4,3 +4,4 @@ push:
 	git push
 	git tag v$m
 	git push origin v$m
+	
