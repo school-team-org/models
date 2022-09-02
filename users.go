@@ -1,15 +1,19 @@
 package models
 
-import "go.mongodb.org/mongo-driver/bson/primitive"
+import (
+	"time"
+
+	"go.mongodb.org/mongo-driver/bson/primitive"
+)
 
 var (
-	USER_MODEL_NAME = "users"
+	USER_MODEL_NAME = "admins"
 	POSITION_LIST   = []string{"head", "teacher", "intern"}
 	ROLE_LIST       = []string{"student", "admin", "teacher", "parents"}
 )
 
 type UserModel struct {
-	ID             primitive.ObjectID `json:"_id" bson:"_id" validate:"required"`
+	DefaultField
 	Firstname      string             `json:"first_name" bson:"first_name" validate:"required"`
 	Lastname       string             `json:"last_name" bson:"last_name" validate:"required"`
 	PhoneNumber    string             `json:"phone_number" bson:"phone_number" validate:"required"`
@@ -30,4 +34,12 @@ type UserModel struct {
 	National       string             `json:"national" bson:"national"`
 	Region         string             `json:"region" bson:"region"`
 	Password       string             `json:"password" bson:"password" validate:"required"`
+}
+
+func GetUserModel() UserModel {
+	var p UserModel
+	p.ID = primitive.NewObjectID()
+	p.CreatedAt = primitive.NewDateTimeFromTime(time.Now())
+	p.UpdatedAt = primitive.NewDateTimeFromTime(time.Now())
+	return p
 }
