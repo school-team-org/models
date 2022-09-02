@@ -1,9 +1,6 @@
 package models
 
 import (
-	"time"
-
-	"github.com/bankonly/goutils/utils"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
@@ -35,18 +32,4 @@ type UserModel struct {
 	National       string             `json:"national" bson:"national"`
 	Region         string             `json:"region" bson:"region"`
 	Password       string             `json:"password" bson:"password" validate:"required"`
-}
-
-func BindUserModel(m *UserModel) *UserModel {
-	m.ID = primitive.NewObjectID()
-	m.CreatedAt = primitive.NewDateTimeFromTime(time.Now())
-	m.UpdatedAt = primitive.NewDateTimeFromTime(time.Now())
-	m.IsActive = true
-	return m
-}
-
-func BindUpdateUserModel(m UserModel) primitive.D {
-	m.UpdatedAt = primitive.NewDateTimeFromTime(time.Now())
-	result := utils.BindUpdate(m)
-	return result
 }
