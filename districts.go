@@ -16,10 +16,9 @@ type DistrictModel struct {
 	NameEn string `json:"name_en" bson:"name_en" validate:"required"`
 }
 
-func GetDistrictModel() DistrictModel {
-	var p DistrictModel
-	p.ID = primitive.NewObjectID()
-	p.CreatedAt = primitive.NewDateTimeFromTime(time.Now())
-	p.UpdatedAt = primitive.NewDateTimeFromTime(time.Now())
-	return p
+func GetDistrictModel(m DistrictModel) DistrictModel {
+	m.ID = primitive.NewObjectID()
+	m.CreatedAt = primitive.NewDateTimeFromTime(time.Now())
+	m.UpdatedAt = primitive.NewDateTimeFromTime(time.Now())
+	return m
 }

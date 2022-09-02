@@ -16,10 +16,9 @@ type VillageModel struct {
 	NameEn string `json:"name_en" bson:"name_en" validate:"required"`
 }
 
-func GetVillageModel() VillageModel {
-	var p VillageModel
-	p.ID = primitive.NewObjectID()
-	p.CreatedAt = primitive.NewDateTimeFromTime(time.Now())
-	p.UpdatedAt = primitive.NewDateTimeFromTime(time.Now())
-	return p
+func GetVillageModel(m VillageModel) VillageModel {
+	m.ID = primitive.NewObjectID()
+	m.CreatedAt = primitive.NewDateTimeFromTime(time.Now())
+	m.UpdatedAt = primitive.NewDateTimeFromTime(time.Now())
+	return m
 }

@@ -36,10 +36,9 @@ type UserModel struct {
 	Password       string             `json:"password" bson:"password" validate:"required"`
 }
 
-func GetUserModel() UserModel {
-	var p UserModel
-	p.ID = primitive.NewObjectID()
-	p.CreatedAt = primitive.NewDateTimeFromTime(time.Now())
-	p.UpdatedAt = primitive.NewDateTimeFromTime(time.Now())
-	return p
+func GetUserModel(m UserModel) UserModel {
+	m.ID = primitive.NewObjectID()
+	m.CreatedAt = primitive.NewDateTimeFromTime(time.Now())
+	m.UpdatedAt = primitive.NewDateTimeFromTime(time.Now())
+	return m
 }
