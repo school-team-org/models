@@ -16,7 +16,7 @@ type VillageModel struct {
 	NameEn string `json:"name_en" bson:"name_en" validate:"required"`
 }
 
-func GetVillageModel(m VillageModel) VillageModel {
+func GetVillageModel(m *VillageModel) *VillageModel {
 	m.ID = primitive.NewObjectID()
 	m.CreatedAt = primitive.NewDateTimeFromTime(time.Now())
 	m.UpdatedAt = primitive.NewDateTimeFromTime(time.Now())
