@@ -3,6 +3,7 @@ package models
 import (
 	"time"
 
+	"github.com/bankonly/goutils/utils"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
@@ -25,8 +26,8 @@ func BindProvinceModel(m *ProvinceModel) *ProvinceModel {
 	return m
 }
 
-func BindUpdateProvinceModel(m *ProvinceModel) *ProvinceModel {
+func BindUpdateProvinceModel(m *ProvinceModel) primitive.D {
 	m.UpdatedAt = primitive.NewDateTimeFromTime(time.Now())
-	m.IsActive = true
-	return m
+	result := utils.BindUpdate(m)
+	return result
 }

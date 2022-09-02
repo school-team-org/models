@@ -3,6 +3,7 @@ package models
 import (
 	"time"
 
+	"github.com/bankonly/goutils/utils"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
@@ -44,8 +45,8 @@ func BindUserModel(m *UserModel) *UserModel {
 	return m
 }
 
-func BindUpdateUserModel(m *UserModel) *UserModel {
+func BindUpdateUserModel(m UserModel) primitive.D {
 	m.UpdatedAt = primitive.NewDateTimeFromTime(time.Now())
-	m.IsActive = true
-	return m
+	result := utils.BindUpdate(m)
+	return result
 }
