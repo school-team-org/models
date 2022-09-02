@@ -26,7 +26,7 @@ func BindProvinceModel(m *ProvinceModel) *ProvinceModel {
 	return m
 }
 
-func BindUpdateProvinceModel(m *ProvinceModel) primitive.D {
+func BindUpdateProvinceModel(m ProvinceModel) primitive.D {
 	m.UpdatedAt = primitive.NewDateTimeFromTime(time.Now())
 	result := utils.BindUpdate(m)
 	return result

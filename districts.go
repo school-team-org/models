@@ -25,7 +25,7 @@ func BindDistrictModel(m *DistrictModel) *DistrictModel {
 	return m
 }
 
-func BindUpdateDistrictModel(m *DistrictModel) primitive.D {
+func BindUpdateDistrictModel(m DistrictModel) primitive.D {
 	m.UpdatedAt = primitive.NewDateTimeFromTime(time.Now())
 	result := utils.BindUpdate(m)
 	return result
