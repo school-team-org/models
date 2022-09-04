@@ -11,5 +11,5 @@ type DistrictModel struct {
 	NameLA       string             `json:"name_la" bson:"name_la" validate:"required"`
 	NameEn       string             `json:"name_en" bson:"name_en" validate:"required"`
 	ProvinceID   primitive.ObjectID `json:"province_id" bson:"province_id" validate:"required"`
-	Code         string             `json:"code" bson:"code"`
+	Code         string             `json:"code" bson:"code" validate:"required"`
 }
