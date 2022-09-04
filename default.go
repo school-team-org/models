@@ -29,8 +29,10 @@ func BindCreate(m any) {
 	var inInterface map[string]interface{}
 	inrec, _ := json.Marshal(m)
 	json.Unmarshal(inrec, &inInterface)
-	inInterface["ID"] = primitive.NewObjectID()
-	inInterface["CreatedAt"] = primitive.NewDateTimeFromTime(time.Now())
-	inInterface["UpdatedAt"] = primitive.NewDateTimeFromTime(time.Now())
-	inInterface["IsActive"] = true
+	inInterface["_id"] = primitive.NewObjectID()
+	inInterface["created_at"] = primitive.NewDateTimeFromTime(time.Now())
+	inInterface["updated_at"] = primitive.NewDateTimeFromTime(time.Now())
+	inInterface["is_active"] = true
+	re, _ := json.Marshal(inInterface)
+	json.Unmarshal(re, &m)
 }
