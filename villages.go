@@ -3,7 +3,7 @@ package models
 import "go.mongodb.org/mongo-driver/bson/primitive"
 
 var (
-	VILLAGE_MODEL_NAME = "districts"
+	VILLAGE_MODEL_NAME = "villages"
 )
 
 type VillageModel struct {
