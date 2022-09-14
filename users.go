@@ -19,7 +19,7 @@ type UserModel struct {
 	Cover          string             `json:"cover" bson:"cover" form:"cover"`
 	Email          string             `json:"email" bson:"email" form:"email" validate:"required"`
 	IsActive       bool               `json:"is_active" bson:"is_active" form:"is_active"`
-	BirthDate      string             `json:"birth_date" bson:"birth_date" form:"birth_date" validate:"required"`
+	BirthDate      primitive.DateTime `json:"birth_date" bson:"birth_date" form:"birth_date" validate:"required"`
 	Role           string             `json:"role" bson:"role" form:"role" validate:"required"`
 	Position       string             `json:"position" bson:"position" form:"position" validate:"required"`
 	VillageId      primitive.ObjectID `json:"village_id" bson:"village_id" form:"village_id" validate:"required"`
