@@ -36,3 +36,5 @@ func BindCreate(m any) {
 	re, _ := json.Marshal(inInterface)
 	json.Unmarshal(re, &m)
 }
+
+type ObjectID [12]byte

@@ -22,10 +22,10 @@ type UserModel struct {
 	BirthDate      time.Time `json:"birth_date" bson:"birth_date" form:"birth_date" valid:"required"`
 	Role           string    `json:"role" bson:"role" form:"role" valid:"required"`
 	Position       string    `json:"position" bson:"position" form:"position" valid:"required"`
-	VillageId      string    `json:"village_id" bson:"village_id" form:"village_id" valid:"required,hex-encoded"`
+	VillageId      ObjectID  `json:"village_id" bson:"village_id" form:"village_id" valid:"required"`
 	IdNo           string    `json:"id_no" bson:"id_no" form:"id_no" valid:"required"`
 	DeviceToken    string    `json:"device_token" bson:"device_token" form:"device_token"`
-	VillageBirthId string    `json:"village_birth_id" bson:"village_birth_id" form:"village_birth_id" valid:"required,hex-encoded"`
+	VillageBirthId ObjectID  `json:"village_birth_id" bson:"village_birth_id" form:"village_birth_id" valid:"required"`
 	Gender         string    `json:"gender" bson:"gender" form:"gender" valid:"required"`
 	Height         float32   `json:"height" bson:"height" form:"height"`
 	Weight         float32   `json:"weight" bson:"weight" form:"weight"`
